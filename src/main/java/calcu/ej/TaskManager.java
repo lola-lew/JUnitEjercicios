@@ -20,14 +20,18 @@ public class TaskManager {
     if (!tasks.isEmpty()) return "Added."; else return "Not added.";
   }
 
-  public String removeTask(String task) {
-    tasks.remove(task);
-    return "Task removed.";
+  public boolean removeTask(String task) {
+    if (tasks.contains(task)) {
+      tasks.remove(task);
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  public String tasksList() {
+  public int tasksList() {
     System.out.println(tasks);
-    return tasks.toString();
+    return tasks.size();
   }
 
 }
